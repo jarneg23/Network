@@ -43,6 +43,7 @@ void main(int argc, char *argv[])
 
     //Server에 보낸 data에 대한 응답 받기
     recvLength = recvfrom(sock, recvBuffer, 1024, 0, (struct sockaddr *) &RecvAddr, &size);
+
     if (recvLength <= 0) { printf("[Recv] error or 0\n"); }
     else 
     {

@@ -44,9 +44,11 @@ void main(int argc, char *argv[])
         else { printf("[Recv] %s , %d byte\n", inet_ntoa(ClientAddr.sin_addr), recvLength); }
 
         recvBuffer[recvLength] = '\0';
-        //client에 요청에 대한 응답 보내기
+        
+	//client에 요청에 대한 응답 보내기
         sendLength = sendto(sock, recvBuffer, strlen(recvBuffer), 0, (struct sockaddr *) &ClientAddr, sizeof(ClientAddr));
-        if (sendLength <= 0) { printf("[Send] error or 0\n"); }
+        
+	if (sendLength <= 0) { printf("[Send] error or 0\n"); }
         else { 
             printf("[Recv] addr : %s\n", inet_ntoa(ClientAddr.sin_addr));
             printf("[Send] %s : %d byte\n", recvBuffer, sendLength); 
