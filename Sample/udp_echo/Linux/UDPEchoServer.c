@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
 
 	//클라이언트에 응답 보내기
         if ((sendLength = sendto(sock, recvBuffer, strlen(recvBuffer), 0, (struct sockaddr *) &ClientAddr, sizeof(ClientAddr))) != recvLength)
-	    printf("send data not same recv data\n");
+	printf("send data not same recv data\n");
         printf("Handling client %s\n", inet_ntoa(ClientAddr.sin_addr));
 	printf("[send] : %s\n",recvBuffer);
 
